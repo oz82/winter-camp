@@ -1,0 +1,71 @@
+yes:low,young,debtless;average,*,debtless;high,*,*
+
+yes:low,middle,debtless;average,*,debtless;average,young,indebted;high,*,*
+no:
+
+0	low,young,debtless
+-	low,young,indebted
++	low,middle,debtless
+-	low,middle,indebted
+-	low,old,debtless
+-	low,old,indebted
+
++	average,young,debtless
++	average,middle,debtless
++	average,old,debtless
+
++	average,young,indebted
+0	average,middle,indebted
+-	average,old,indebted
++	high,young,debtless
++	high,young,indebted
++	high,middle,debtless
++	high,middle,indebted
++	high,old,debtless
+0	high,old,indebted
+
+
+enumaration
+
+0	low,young,debtless
+1	low,young,indebted
+2	low,middle,debtless
+3	low,middle,indebted
+4	low,old,debtless
+5	low,old,indebtedhigh,young,debtless
+-	high,young,indebted
+-	high,middle,debtless
+-	high,middle,indebted
+-	high,old,debtless
+-	high,old,indebted
+6	average,young,debtless
+7	average,young,indebted
+8	average,middle,debtless
+9	average,middle,indebted
+10	average,old,debtless
+11	average,old,indebted
+12	high,young,debtless
+13	high,young,indebted
+14	high,middle,debtless
+15	high,middle,indebted
+16	high,old,debtless
+17	high,old,indebted
+
+low	    young	indebted	no
+low	    middle	indebted	no
+low	    old	    debtless	no
+low	    old	    indebted	no
+average	old	    indebted	no
+
+low	    middle	debtless	yes
+average	young	debtless	yes
+average	young	indebted	yes
+average	middle	debtless	yes
+average	old	    debtless	yes
+high	young	debtless	yes
+high	young	indebted	yes
+high	middle	debtless	yes
+high	middle	indebted	yes
+high	old	    debtless	yes
+
+

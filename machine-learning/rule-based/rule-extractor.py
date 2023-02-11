@@ -57,5 +57,37 @@ factor[len(factor)-1] = 1
 #print(data)
 #print(column[0].index('high'))
 
-for x in generate_universal_set(column, n, factor):
-    print(x)
+#for x in generate_universal_set(column, n, factor):
+#    print(x)
+
+input = "no!yes:low,middle,debtless;average,*,debtless;average,young,indebted;high,*,*"
+parts = input.split(':')
+target_label = parts[0].split('!')[1] # yes
+other_label = parts[0].split('!')[0]  # no
+rules = parts[1].split(';')
+array = generate_universal_set(column, n, factor)
+
+for element in array:
+    found = False
+    for rule in rules:
+        rule_array = rule.split(',')
+        c = 0
+        for i in range(num_var_col):
+            if rule_array[i] == element[i] or rule_array[i] == '*':
+                c = c + 1
+        if c == num_var_col:
+            element.append(target_label)
+            found = True
+    if found == False:
+        element.append(other_label)
+
+#for element in array:      
+#    print(element)
+
+c = 0
+for i in range(len(array)):
+    for j in range(len(data)):
+        if array[i] == data[j]:
+            c = c + 1
+
+print("rule accuracy: %f" % (c / len(data)))
